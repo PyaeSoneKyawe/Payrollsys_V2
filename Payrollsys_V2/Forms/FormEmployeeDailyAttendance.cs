@@ -26,6 +26,10 @@ namespace Payrollsys_V2.Forms
             dataGridView1.DataSource = empatt.getemp();
             dataGridViewempdaily.DataSource = empatt.getempatt();
             dateTimePicker1.Value = DateTime.Now;
+
+            dateTimePicker2.CustomFormat = "HH:mm";
+
+
         }
 
 
@@ -122,6 +126,8 @@ namespace Payrollsys_V2.Forms
             DateTime tout;
             DateTime oth;
             DateTime wh;
+            string val  = dateTimePicker2.Value.ToString("HH:mm");
+            string[] value = val.Split(':');
             int state = 1;
 
             try
@@ -271,6 +277,11 @@ namespace Payrollsys_V2.Forms
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = false;
         }
     }
 }

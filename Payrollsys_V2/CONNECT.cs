@@ -11,7 +11,7 @@ namespace Payrollsys_V2
 {
     class CONNECT
     {
-        private MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=payrollmanagesys");
+        private MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=root;database=empsys");
         public MySqlConnection getConnetion()
         {
             return connection;
