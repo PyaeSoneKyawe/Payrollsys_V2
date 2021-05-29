@@ -59,7 +59,7 @@ namespace Payrollsys_V2
 
         public DataTable getemp()
         {
-             MySqlCommand command = new MySqlCommand("SELECT `Empid`,`Name` FROM `employee_info` where `Status`!= 3", conn.getConnetion());
+             MySqlCommand command = new MySqlCommand("SELECT `ID`,`Empid`,`Name` FROM `employee_info` where `Status`!= 3", conn.getConnetion());
              MySqlDataAdapter adapter = new MySqlDataAdapter();
              DataTable table = new DataTable();
 
