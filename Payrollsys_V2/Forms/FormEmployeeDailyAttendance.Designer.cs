@@ -40,10 +40,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtin = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtout = new System.Windows.Forms.TextBox();
             this.txtworkinghour = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,10 +49,11 @@
             this.txtlate = new System.Windows.Forms.TextBox();
             this.dataGridViewempdaily = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txtin = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnsearch = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtout = new System.Windows.Forms.DateTimePicker();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewempdaily)).BeginInit();
             this.panel2.SuspendLayout();
@@ -196,21 +195,12 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(200, 129);
+            this.label7.Location = new System.Drawing.Point(208, 129);
             this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 22);
             this.label7.TabIndex = 35;
             this.label7.Text = "OUT";
-            // 
-            // txtin
-            // 
-            this.txtin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtin.Location = new System.Drawing.Point(108, 127);
-            this.txtin.Margin = new System.Windows.Forms.Padding(1);
-            this.txtin.Name = "txtin";
-            this.txtin.Size = new System.Drawing.Size(88, 30);
-            this.txtin.TabIndex = 5;
             // 
             // label6
             // 
@@ -234,15 +224,6 @@
             this.label4.TabIndex = 33;
             this.label4.Text = "Working hours";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtout
-            // 
-            this.txtout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtout.Location = new System.Drawing.Point(291, 122);
-            this.txtout.Margin = new System.Windows.Forms.Padding(1);
-            this.txtout.Name = "txtout";
-            this.txtout.Size = new System.Drawing.Size(88, 30);
-            this.txtout.TabIndex = 6;
             // 
             // txtworkinghour
             // 
@@ -314,7 +295,8 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GrayText;
-            this.panel2.Controls.Add(this.dateTimePicker2);
+            this.panel2.Controls.Add(this.txtout);
+            this.panel2.Controls.Add(this.txtin);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.btnsearch);
             this.panel2.Controls.Add(this.label3);
@@ -330,8 +312,6 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txtin);
-            this.panel2.Controls.Add(this.txtout);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(23, 10);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -340,26 +320,27 @@
             this.panel2.TabIndex = 46;
             this.panel2.Click += new System.EventHandler(this.panel2_Click);
             // 
-            // dateTimePicker2
+            // txtin
             // 
-            this.dateTimePicker2.CustomFormat = " ";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(108, 161);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(140, 27);
-            this.dateTimePicker2.TabIndex = 46;
+            this.txtin.CustomFormat = " ";
+            this.txtin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtin.Location = new System.Drawing.Point(108, 129);
+            this.txtin.Name = "txtin";
+            this.txtin.ShowUpDown = true;
+            this.txtin.Size = new System.Drawing.Size(88, 27);
+            this.txtin.TabIndex = 46;
+            this.txtin.Value = new System.DateTime(2021, 5, 29, 9, 0, 0, 0);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(291, 10);
+            this.dataGridView1.Location = new System.Drawing.Point(297, 14);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(337, 160);
+            this.dataGridView1.Size = new System.Drawing.Size(264, 89);
             this.dataGridView1.TabIndex = 45;
             this.dataGridView1.Visible = false;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -390,6 +371,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(793, 261);
             this.panel1.TabIndex = 47;
+            // 
+            // txtout
+            // 
+            this.txtout.CustomFormat = " ";
+            this.txtout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtout.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtout.Location = new System.Drawing.Point(268, 129);
+            this.txtout.Name = "txtout";
+            this.txtout.ShowUpDown = true;
+            this.txtout.Size = new System.Drawing.Size(87, 27);
+            this.txtout.TabIndex = 47;
             // 
             // FormEmployeeDailyAttendance
             // 
@@ -425,10 +417,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtin;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtout;
         private System.Windows.Forms.TextBox txtworkinghour;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
@@ -441,6 +431,7 @@
         public System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker txtin;
+        private System.Windows.Forms.DateTimePicker txtout;
     }
 }

@@ -137,5 +137,10 @@ namespace Payrollsys_V2
             RegisterForm reg = new RegisterForm();
             reg.Show();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

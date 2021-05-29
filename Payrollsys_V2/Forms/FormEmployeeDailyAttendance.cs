@@ -27,7 +27,8 @@ namespace Payrollsys_V2.Forms
             dataGridViewempdaily.DataSource = empatt.getempatt();
             dateTimePicker1.Value = DateTime.Now;
 
-            dateTimePicker2.CustomFormat = "HH:mm";
+            txtin.CustomFormat = "HH:mm";
+            txtout.CustomFormat = "HH:mm";
 
 
         }
@@ -42,7 +43,7 @@ namespace Payrollsys_V2.Forms
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtempid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             dataGridView1.Visible = false;
             int id;
             id = Convert.ToInt32(txtempid.Text);
@@ -126,7 +127,7 @@ namespace Payrollsys_V2.Forms
             DateTime tout;
             DateTime oth;
             DateTime wh;
-            string val  = dateTimePicker2.Value.ToString("HH:mm");
+            string val  = txtin.Value.ToString("HH:mm");
             string[] value = val.Split(':');
             int state = 1;
 
