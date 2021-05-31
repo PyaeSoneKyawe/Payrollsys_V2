@@ -22,32 +22,35 @@ namespace Payrollsys_V2.Forms
         // For clear 
         private void btnclear_Click(object sender, EventArgs e)
         {
+            txtID.Text = "";
             txtempid.Text = "";
             txtname.Text = "";
             txtphnumber.Text = "";
-            txtdailypay.Text = "";
+            txtSalary.Text = "";
             txtotpay.Text = "";
             richTextBoxaddress.Text = "";
 
         }
         private void FormRegister_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = emp.getdelemp();
+            dataGridView1.DataSource = emp.getEmployees();
+            dataGridView1.ReadOnly = true;
 
-         }
+        }
         //For Save Button
         private void btnsave_Click(object sender, EventArgs e)
         {
             //@nm, @ph, @ad, @bp
-            String nm = txtname.Text;
-            String ph = txtphnumber.Text;
-            String ad = richTextBoxaddress.Text;
+            string empId = txtempid.Text;
+            string nm = txtname.Text;
+            string ph = txtphnumber.Text;
+            string ad = richTextBoxaddress.Text;
             int bp;
             int otp;
             int state =1 ; 
             try
             {
-                bp = Convert.ToInt32(txtdailypay.Text);
+                bp = Convert.ToInt32(txtSalary.Text);
                 otp = Convert.ToInt32(txtotpay.Text);
 
                 if (nm.Trim().Equals("") || ph.Trim().Equals("") || ad.Trim().Equals("") || bp.Equals("") || otp.Equals(""))
@@ -56,7 +59,7 @@ namespace Payrollsys_V2.Forms
                 }
                 else
                 {
-                    Boolean insertClient = emp.insertClient(nm, ph, ad, bp, otp,state);
+                    Boolean insertClient = emp.insertClient(empId, nm, ph, ad, bp, otp,state);
 
                     if (insertClient)
                     {
@@ -82,32 +85,39 @@ namespace Payrollsys_V2.Forms
         private void btnupdate_Click(object sender, EventArgs e)
         {
             int id;
-            String nm = txtname.Text;
-            String ph = txtphnumber.Text;
-            String ad = richTextBoxaddress.Text;
+            string empID = txtempid.Text;
+            string nm = txtname.Text;
+            string ph = txtphnumber.Text;
+            string ad = richTextBoxaddress.Text;
             int bp;
             int otp;
             
 
             try
             {
-                id = Convert.ToInt32(txtempid.Text);
-                bp = Convert.ToInt32(txtdailypay.Text);
-                otp = Convert.ToInt32(txtotpay.Text);
-                int state = 2;
-
-                if (nm.Trim().Equals("") || ph.Trim().Equals("") || ad.Trim().Equals("") || bp.Equals("") || otp.Equals(""))
+                
+               
+                if (txtID.Text.Equals(""))
+                {
+                    MessageBox.Show("Please Select Employee To Update!", "Select Employee!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (nm.Trim().Equals("") || ph.Trim().Equals("") || ad.Trim().Equals("") || txtSalary.Text.Equals("") || txtotpay.Text.Equals(""))
                 {
                     MessageBox.Show("Required Fill the Fields!", "Empty Field!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    Boolean insertClient = emp.editemp(id,nm,ph,ad,bp,otp,state);
+                    bp = Convert.ToInt32(txtSalary.Text);
+                    otp = Convert.ToInt32(txtotpay.Text);
+                    int state = 2;
+                    id = Convert.ToInt32(txtID.Text);
+
+                    Boolean insertClient = emp.editemp(id, empID, nm,ph,ad,bp,otp,state);
 
                     if (insertClient)
                     {
-                        dataGridView1.DataSource = emp.getdelemp();
-                        MessageBox.Show("New Employee Updated Sucessfuly!", "Edit Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dataGridView1.DataSource = emp.getEmployees();
+                        MessageBox.Show("Employee Updated Sucessfully!", "Edit Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnclear.PerformClick();
                     }
                     else
@@ -124,56 +134,63 @@ namespace Payrollsys_V2.Forms
         // to take data from datagridview
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtempid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtphnumber.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            richTextBoxaddress.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            txtdailypay.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            txtotpay.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtempid.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtphnumber.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            richTextBoxaddress.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtSalary.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtotpay.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtempid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtphnumber.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            richTextBoxaddress.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            txtdailypay.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            txtotpay.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtempid.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtphnumber.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            richTextBoxaddress.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtSalary.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtotpay.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
 
         }
 
         private void btndelete_Click(object sender, EventArgs e)
         {
             int id;
-            String nm = txtname.Text;
-            String ph = txtphnumber.Text;
-            String ad = richTextBoxaddress.Text;
+            string empID = txtempid.Text;
+            string nm = txtname.Text;
+            string ph = txtphnumber.Text;
+            string ad = richTextBoxaddress.Text;
             int bp;
             int otp;
             try
-            {
-                id = Convert.ToInt32(txtempid.Text);
-                bp = Convert.ToInt32(txtdailypay.Text);
-                otp = Convert.ToInt32(txtotpay.Text);
+            {  
                 int state = 3;
-                if (nm.Trim().Equals("") || ph.Trim().Equals("") || ad.Trim().Equals("") || bp.Equals("") || otp.Equals(""))
+                if (txtID.Text.Equals(""))
+                {
+                    MessageBox.Show("Please Select Employee To Delete!", "Select Employee!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (nm.Trim().Equals("") || ph.Trim().Equals("") || ad.Trim().Equals("") || txtSalary.Text.Equals("") || txtotpay.Text.Equals(""))
                 {
                     MessageBox.Show("Required Fill the Fields!", "Empty Field!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    Boolean insertClient = emp.editemp(id,nm,ph,ad,bp,otp,state);
-                    if (insertClient)
-                    {
-                        dataGridView1.DataSource = emp.getdelemp();
-                        MessageBox.Show("New Employee Delete Sucessfuly!", "Delete Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        btnclear.PerformClick();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error Employee Not Deleted!", "Delete Employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
+                    id = Convert.ToInt32(txtID.Text);
+                    bp = Convert.ToInt32(txtSalary.Text);
+                    otp = Convert.ToInt32(txtotpay.Text);
+                     Boolean insertClient = emp.editemp(id,empID,nm,ph,ad,bp,otp,state);
+                      if (insertClient)
+                      {
+                          dataGridView1.DataSource = emp.getEmployees();
+                          MessageBox.Show("New Employee Delete Sucessfuly!", "Delete Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                          btnclear.PerformClick();
+                      }
+                      else
+                      {
+                          MessageBox.Show("Error Employee Not Deleted!", "Delete Employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                      }
+                    
                 }
 
             }
@@ -183,6 +200,36 @@ namespace Payrollsys_V2.Forms
             }
         }
 
+        private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
+        }
 
+        private void txtotpay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
+        }
+
+        private void txtphnumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

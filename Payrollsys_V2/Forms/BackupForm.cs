@@ -27,8 +27,8 @@ namespace Payrollsys_V2.Forms
             {
                 MySqlCommand command = new MySqlCommand();
                 string filename = txtfilename.Text;
-                string file = "D:\\backups\\" + filename + ".sql";
-                string constring = "datasource = localhost; port = 3306; username = root; password =; database = payrollmanagesys";
+                string file = "C:\\backups\\" + filename + ".sql";
+                string constring = "datasource = localhost; port = 3306; username = root; password =root; database = empsys";
                 using (MySqlConnection conn = new MySqlConnection(constring))
                 {
                     using (MySqlCommand cmd = new MySqlCommand())

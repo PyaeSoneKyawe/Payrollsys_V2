@@ -242,6 +242,7 @@ namespace Payrollsys_V2
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
+           
             MessageBox.Show("Dimond Sisters Printing Monywa Payrollsys\nPayroll Management Software \nPayroll Managed By : Thura Aung Htet \nDeveloped By : Pyae Sone Kyawe\nPhone no: 09-794391536\nVersion 2.0  ", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -256,6 +257,25 @@ namespace Payrollsys_V2
             OpenChildForm(new ImportForm());
             ImportForm frm = new ImportForm();
             frm.StartPosition = FormStartPosition.CenterParent;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new Forms.RegisterForm());
+            hideSubMenu();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm login = new LoginForm();
+            login.Show();
         }
     }
 }

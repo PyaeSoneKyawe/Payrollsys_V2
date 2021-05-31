@@ -26,6 +26,11 @@ namespace Payrollsys_V2.Forms
             dataGridView1.DataSource = empatt.getemp();
             dataGridViewempdaily.DataSource = empatt.getempatt();
             dateTimePicker1.Value = DateTime.Now;
+
+            txtin.CustomFormat = "HH:mm";
+            txtout.CustomFormat = "HH:mm";
+
+
         }
 
 
@@ -38,7 +43,7 @@ namespace Payrollsys_V2.Forms
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtempid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             dataGridView1.Visible = false;
             int id;
             id = Convert.ToInt32(txtempid.Text);
@@ -122,6 +127,8 @@ namespace Payrollsys_V2.Forms
             DateTime tout;
             DateTime oth;
             DateTime wh;
+            string val  = txtin.Value.ToString("HH:mm");
+            string[] value = val.Split(':');
             int state = 1;
 
             try
@@ -271,6 +278,11 @@ namespace Payrollsys_V2.Forms
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = false;
         }
     }
 }
