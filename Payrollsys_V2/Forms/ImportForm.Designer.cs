@@ -32,6 +32,8 @@ namespace Payrollsys_V2.Forms
             this.openfilebtn = new System.Windows.Forms.Button();
             this.filename = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.importbtn = new System.Windows.Forms.Button();
+            this.csvfilebtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openfilebtn
@@ -55,11 +57,37 @@ namespace Payrollsys_V2.Forms
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // importbtn
+            // 
+            this.importbtn.BackColor = System.Drawing.SystemColors.Desktop;
+            this.importbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importbtn.Location = new System.Drawing.Point(130, 130);
+            this.importbtn.Name = "importbtn";
+            this.importbtn.Size = new System.Drawing.Size(123, 45);
+            this.importbtn.TabIndex = 2;
+            this.importbtn.Text = "Import";
+            this.importbtn.UseVisualStyleBackColor = false;
+            this.importbtn.Click += new System.EventHandler(this.importbtn_Click);
+            // 
+            // csvfilebtn
+            // 
+            this.csvfilebtn.BackColor = System.Drawing.SystemColors.Desktop;
+            this.csvfilebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.csvfilebtn.Location = new System.Drawing.Point(448, 61);
+            this.csvfilebtn.Name = "csvfilebtn";
+            this.csvfilebtn.Size = new System.Drawing.Size(168, 43);
+            this.csvfilebtn.TabIndex = 3;
+            this.csvfilebtn.Text = "CSV file download";
+            this.csvfilebtn.UseVisualStyleBackColor = false;
+            this.csvfilebtn.Click += new System.EventHandler(this.csvfilebtn_Click);
+            // 
             // ImportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.csvfilebtn);
+            this.Controls.Add(this.importbtn);
             this.Controls.Add(this.filename);
             this.Controls.Add(this.openfilebtn);
             this.Name = "ImportForm";
@@ -74,5 +102,7 @@ namespace Payrollsys_V2.Forms
         private System.Windows.Forms.Button openfilebtn;
         private System.Windows.Forms.TextBox filename;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button importbtn;
+        private System.Windows.Forms.Button csvfilebtn;
     }
 }
