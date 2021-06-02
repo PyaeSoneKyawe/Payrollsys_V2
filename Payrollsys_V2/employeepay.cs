@@ -101,8 +101,9 @@ namespace Payrollsys_V2
 
 
         public DataTable getemp()
+        //,employee_info.Empid
         {
-            MySqlCommand command = new MySqlCommand("SELECT employee_info.Empid, employee_info.Name,employee_info.Basic_Pay,employee_info.OT_Pay,employee_att_total.Total_WorkingHr,employee_att_total.Total_WorkingDays,employee_att_total.Total_OTHr,employee_att_total.From_Date,employee_att_total.To_Date,employee_att_total.Total_LeaveDays,employee_att_total.Total_LateHr,employee_att_total.Actual_WorkingHr,employee_att_total.Actual_WorkingDays,employee_att_total.Status FROM employee_info INNER JOIN employee_att_total ON employee_info.Empid = employee_att_total.Empid and employee_att_total.Status !=3 ; ", conn.getConnetion());
+            MySqlCommand command = new MySqlCommand("SELECT employee_info.ID, employee_info.Name,employee_info.Salary,employee_info.OT,employee_att_total.Total_WorkingHr,employee_att_total.Total_WorkingDays,employee_att_total.Total_OTHr,employee_att_total.From_Date,employee_att_total.To_Date,employee_att_total.Total_LeaveDays,employee_att_total.Total_LateHr,employee_att_total.Actual_WorkingHr,employee_att_total.Actual_WorkingDays,employee_att_total.Status FROM employee_info INNER JOIN employee_att_total ON employee_info.ID = employee_att_total.Empid and employee_att_total.Status !=3 ; ", conn.getConnetion());
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
             adapter.SelectCommand = command;

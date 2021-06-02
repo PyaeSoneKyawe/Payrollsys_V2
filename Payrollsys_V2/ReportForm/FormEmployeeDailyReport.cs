@@ -30,7 +30,6 @@ namespace Payrollsys_V2.ReportForm
         {
             m_employees = new List<empattreport>();
 
-
             int idd = Convert.ToInt32(txtempid.Text);
             DateTime stdate = startdate.Value;
             DateTime endate = entdate.Value;

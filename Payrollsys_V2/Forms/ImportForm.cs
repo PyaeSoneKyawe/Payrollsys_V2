@@ -38,20 +38,32 @@ namespace Payrollsys_V2.Forms
             Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Sheets[1];
             worksheet.Name = "WorkSheet";
             // Write data
-            worksheet.Cells[1, 1] = "FileName";
-            worksheet.Cells[1, 2] = "FindString";
-            worksheet.Cells[1, 3] = "ReplaceString";
+            worksheet.Cells[1, 1] = "ID";
+            worksheet.Cells[1, 2] = "Empid";
+            worksheet.Cells[1, 3] = "Name";
+            worksheet.Cells[1, 4] = "Date";
+            worksheet.Cells[1, 5] = "IN_Hr";
+            worksheet.Cells[1, 6] = "OUT_Hr";
+            worksheet.Cells[1, 7] = "DailyWork_Hr";
+            worksheet.Cells[1, 8] = "OT_HR";
+            worksheet.Cells[1, 9] = "Late_Hr";
+            worksheet.Cells[1, 10] = "Status";
 
-            // Show save file dialog
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            //{
-                 worksheet.SaveAs(@"F:\File\DailyList.csv", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);
-                 workBook.Close(false, Type.Missing, Type.Missing);
-                 app.Quit();
-            //worksheet.SaveAs(@"C:\output.csv", Microsoft.Office.Interop.Excel.XlFileFormat.xlCSVWindows);
-            //workBook.Close(false);
-            // }
+            // Save file as xlsx
+            SaveFileDialog saveFileDialog = new SaveFileDialog();       
+            worksheet.SaveAs(@"F:\File\aa.xlsx", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);
+            workBook.Close(false, Type.Missing, Type.Missing);  
+
+            //import file as csv
+            string inputFile = @"F:\File\aa.xlsx";
+            string outputFile = @"F:\File\DailyList_CSV.csv";
+            Microsoft.Office.Interop.Excel.Application app2 = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook wb = app2.Workbooks.Open(inputFile);
+            Microsoft.Office.Interop.Excel.Worksheet xlSheet = (Microsoft.Office.Interop.Excel.Worksheet)wb.Worksheets[1];
+
+            wb.SaveAs(outputFile, Microsoft.Office.Interop.Excel.XlFileFormat.xlCSV);
+            wb.Close(false);
+            app.Quit();
 
             MessageBox.Show("Downloaded template at F:\\File\\DailyList.csv", "Template", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,15 +21,15 @@ namespace Payrollsys_V2.Forms
         {
             InitializeComponent();
         }
-
+        
         private void FormEmployeeDailyAttendance_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = empatt.getemp();
-            dataGridViewempdaily.DataSource = empatt.getempatt();
+            dataGridViewempdaily.DataSource = empatt.getEmployeeAttemdamceDaily();
             dateTimePicker1.Value = DateTime.Now;
-
             txtin.CustomFormat = "HH:mm";
             txtout.CustomFormat = "HH:mm";
+           
 
 
         }
@@ -42,6 +43,7 @@ namespace Payrollsys_V2.Forms
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            ID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             txtempid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             txtname.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             dataGridView1.Visible = false;
@@ -52,7 +54,9 @@ namespace Payrollsys_V2.Forms
 
         private void dataGridViewempdaily_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtempid.Text = dataGridViewempdaily.CurrentRow.Cells[1].Value.ToString();
+            ID.Text = dataGridViewempdaily.CurrentRow.Cells[1].Value.ToString();
+            txtempid.Text = dataGridViewempdaily.CurrentRow.Cells[9].Value.ToString();
+            attendanceID.Text = dataGridViewempdaily.CurrentRow.Cells[0].Value.ToString();
             txtname.Text = dataGridViewempdaily.CurrentRow.Cells[2].Value.ToString();
             dateTimePicker1.Text = dataGridViewempdaily.CurrentRow.Cells[3].Value.ToString();
             txtin.Text = dataGridViewempdaily.CurrentRow.Cells[4].Value.ToString();
@@ -60,14 +64,23 @@ namespace Payrollsys_V2.Forms
             txtworkinghour.Text = dataGridViewempdaily.CurrentRow.Cells[6].Value.ToString();
             txtot.Text = dataGridViewempdaily.CurrentRow.Cells[7].Value.ToString();
             txtlate.Text = dataGridViewempdaily.CurrentRow.Cells[8].Value.ToString();
+            
         }
         private void btnclear_Click(object sender, EventArgs e)
         {
-            txtin.Text = "";
-            txtout.Text = "";
+            dateTimePicker1.Value = DateTime.Now;
+            CultureInfo ci = CultureInfo.InvariantCulture;
+            DateTime indate;
+            indate = DateTime.ParseExact("09:00", "HH:mm", ci);
+            txtin.Value = indate;
+            ID.Text = "";
+            txtempid.Text = "";
+            txtname.Text = "";
+            txtout.Text = ""; 
             txtworkinghour.Text = "";
             txtot.Text = "";
             txtlate.Text = "";
+            attendanceID.Text = "";
             dateTimePicker1.Value = DateTime.Now;
         }
 
@@ -139,7 +152,7 @@ namespace Payrollsys_V2.Forms
                 wh = DateTime.Parse(txtworkinghour.Text);
                 oth = DateTime.Parse(txtot.Text);
                 late = DateTime.Parse(txtlate.Text);
-
+                string EID = ID.Text;
                 if (tin.Equals("") || tout.Equals("") || oth.Equals(""))
                 {
                     MessageBox.Show("Required Fill the Fields!", "Empty Field!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -154,13 +167,13 @@ namespace Payrollsys_V2.Forms
 
                 else
                 {
-                    Boolean insertClient = empatt.insertempatt(id, nm, dt, tin, tout, wh, oth, late, state);
+                    Boolean insertClient = empatt.insertempatt(id, nm, dt, tin, tout, wh, oth, late, state,EID);
 
                     if (insertClient)
                     {
                         dataGridViewempdaily.DataSource = empatt.filterempatt(id);
                         //dataGridViewempdaily.DataSource = empatt.filterempatt(id);
-                        MessageBox.Show("New Employee ID Attendance Inserted Sucessfuly!", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("New Employee Attendance Inserted Sucessfuly!", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnclear.PerformClick();
                     }
                     else
@@ -178,7 +191,7 @@ namespace Payrollsys_V2.Forms
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            string s = dataGridViewempdaily.CurrentRow.Cells[0].Value.ToString();
+            //string s = dataGridViewempdaily.CurrentRow.Cells[0].Value.ToString();
             int id;
             string nm = txtname.Text;
             DateTime late;
@@ -189,8 +202,8 @@ namespace Payrollsys_V2.Forms
 
             try
             {
-                int eid = Convert.ToInt32(s);
-                id = Convert.ToInt32(txtempid.Text);
+
+                id = Convert.ToInt32(attendanceID.Text);
                 tin = DateTime.Parse(txtin.Text);
                 tout = DateTime.Parse(txtout.Text);
                 wh = DateTime.Parse(txtworkinghour.Text);
@@ -200,19 +213,25 @@ namespace Payrollsys_V2.Forms
                 int state = 2;
 
 
-                if (wh.Equals("") || oth.Equals(""))
+                if (attendanceID.Text.Equals(""))
+                {
+                    MessageBox.Show("Please Select Employee From List To Update", "Select Employee", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (wh.Equals("") || oth.Equals(""))
                 {
                     MessageBox.Show("Required Fill the Fields!", "Empty Field!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    Boolean insertClient = empatt.editempatt(eid,id, nm, dt, tin, tout, wh, oth, late,state);
+                    int eid = int.Parse(txtempid.Text);
+                    string EmployeeID = ID.Text;
+                    Boolean insertClient = empatt.editempatt(eid,id, nm, dt, tin, tout, wh, oth, late,state,EmployeeID);
 
                     if (insertClient)
                     {
-                        dataGridViewempdaily.DataSource = empatt.filterempatt(id);
                         MessageBox.Show("New Employee Attendance Updated Sucessfuly!", "Edit Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnclear.PerformClick();
+                        dataGridViewempdaily.DataSource = empatt.getEmployeeAttemdamceDaily();
 
                     }
                     else
