@@ -244,7 +244,7 @@ namespace Payrollsys_V2.Forms
                     {
                         int latehours = Convert.ToInt32(lhlist[0]);
                         int lateminute = Convert.ToInt32(lhlist[1]);
-                        if (whours > latehours)
+                        if (whours >= latehours && wminute >= lateminute)
                         {
                             int totalhours = whours - latehours;
                             Console.WriteLine(totalhours);
@@ -256,7 +256,7 @@ namespace Payrollsys_V2.Forms
                             Console.WriteLine(actualhours);
 
                         }
-                        else if (lateminute > wminute)
+                        else if (lateminute >= wminute)
                         {
                             int totalhours = whours - latehours;
                             int totalminute = lateminute - wminute;
@@ -266,7 +266,7 @@ namespace Payrollsys_V2.Forms
                             txtactualhours.Text = actualhours.ToString();
                             Console.WriteLine(actualhours);
                         }
-                        else if(latehours > whours)
+                        else if(latehours >= whours)
                         {
                             int totalhours = latehours - whours;
                             int totalminute = wminute - lateminute;

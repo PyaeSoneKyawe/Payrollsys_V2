@@ -255,6 +255,8 @@ namespace Payrollsys_V2
         private void ImportData_Click(object sender, EventArgs e)
         {
             OpenChildForm(new ImportForm());
+            ImportForm frm = new ImportForm();
+            frm.StartPosition = FormStartPosition.CenterParent;
         }
 
         private void Form1_Load(object sender, EventArgs e)
