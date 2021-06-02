@@ -24,15 +24,15 @@ namespace Payrollsys_V2.Forms
         private void FormEmployeeTotalAttendance_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = emptot.getemp();
-            dataGridViewempatttotal.DataSource = emptot.getempatt();
+            dataGridViewempatttotal.DataSource = emptot.getEmployeeAttemdamceTotal();
             startdate.Value = DateTime.Now;
             enddate.Value = DateTime.Now;
-
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtemployid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            EmployeeID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtemployid.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             txtname.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             dataGridView1.Visible = false;
             int id;
@@ -60,6 +60,7 @@ namespace Payrollsys_V2.Forms
         }
         private void txttotdays_Enter(object sender, EventArgs e)
         {
+            /*
             try
             {
                 //for total day
@@ -67,13 +68,7 @@ namespace Payrollsys_V2.Forms
                 DateTime stdate = startdate.Value;
                 DateTime endate = enddate.Value;
 
-                MySqlCommand command = new MySqlCommand("SELECT COUNT(`Date`) as Total FROM employee_att_daily WHERE `Status`!=3 and `Empid`= '" + id + "' and Date BETWEEN @from and @to ", conn.getConnetion());
-                command.Parameters.Add("@from", MySqlDbType.Date).Value = stdate;
-                command.Parameters.Add("@to", MySqlDbType.Date).Value = endate;
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                DataTable table = new DataTable();
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
+                DataTable table = emptot.GetTotalDays(id,stdate,endate);
                 if (table.Rows.Count > 0)
                 {
                     txttotdays.Text = table.Rows[0]["Total"].ToString();
@@ -83,24 +78,20 @@ namespace Payrollsys_V2.Forms
             {
                 MessageBox.Show("Required Fill the Fields!", "Empty Data!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            */
         }
 
         private void txtleave_Enter(object sender, EventArgs e)
         {
             // for total leave day
+            /*
             try
             {
                 int id = Convert.ToInt32(txtemployid.Text);
                 DateTime leavetime = DateTime.Parse("00:00:00");
                 DateTime stdate = startdate.Value;
                 DateTime endate = enddate.Value;
-                MySqlCommand command = new MySqlCommand("SELECT COUNT(`Date`) as Total  FROM employee_att_daily WHERE `Status`!=3 and `DailyWork_Hr` = '" + leavetime + "' and Empid ='" + id + "' and Date BETWEEN @from and @to", conn.getConnetion());
-                command.Parameters.Add("@from", MySqlDbType.Date).Value = stdate;
-                command.Parameters.Add("@to", MySqlDbType.Date).Value = endate;
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                DataTable table = new DataTable();
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
+                DataTable table = emptot.GetTotalLeaveDays(id,leavetime,stdate,endate);
                 if (table.Rows.Count > 0)
                 {
                     txtleave.Text = table.Rows[0]["Total"].ToString();
@@ -110,12 +101,14 @@ namespace Payrollsys_V2.Forms
             {
                 MessageBox.Show("Required Fill the Fields!", "Empty Data!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            */
 
         }
 
         private void txtactualdays_Enter(object sender, EventArgs e)
         {
             // for actual working days
+            /*
             try
             {
                 int workingday = Convert.ToInt32(txttotdays.Text);
@@ -127,7 +120,7 @@ namespace Payrollsys_V2.Forms
                 }
                 else if (workingday < leave)
                 {
-                    MessageBox.Show("Totday should be greater than Leave day ", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Totalday should be greater than Leave day ", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -136,24 +129,19 @@ namespace Payrollsys_V2.Forms
                 MessageBox.Show("Required Fill the Fields!", "Empty Data!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+            */
         }
 
         private void txtlate_Enter(object sender, EventArgs e)
         {
             // for total late hours
+            /*
             try
             {
                 int id = Convert.ToInt32(txtemployid.Text);
                 DateTime stdate = startdate.Value;
                 DateTime endate = enddate.Value;
-                MySqlCommand command = new MySqlCommand("select (sum(time_to_sec(`Late_Hr`)))  as Total from employee_att_daily WHERE `Status`!=3 and Empid ='" + id + "' and Date BETWEEN @from and @to ", conn.getConnetion());
-                command.Parameters.Add("@from", MySqlDbType.Date).Value = stdate;
-                command.Parameters.Add("@to", MySqlDbType.Date).Value = endate;
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                DataTable table = new DataTable();
-
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
+                DataTable table = emptot.GetTotalLateHours(id,stdate,endate);
                 if (table.Rows.Count > 0)
                 {
                     string s = table.Rows[0]["Total"].ToString();
@@ -163,9 +151,6 @@ namespace Payrollsys_V2.Forms
 
 
                     string totallate = string.Format("{0:D2}:{1:D2}", hours, minute);
-                    // double finallate = totallate / 3600;
-                    // double test = totallate % 3600;
-                    // double finallateresult = finallate + test;
                     txtlate.Text = totallate.ToString();
                 }
             }
@@ -173,26 +158,20 @@ namespace Payrollsys_V2.Forms
             {
                 MessageBox.Show("Required Fill the Fields!", "Empty Data!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            */
 
         }
 
         private void txttothours_Enter(object sender, EventArgs e)
         {
             // for total working hours
+            /*
             try
             {
                 int id = Convert.ToInt32(txtemployid.Text);
                 DateTime stdate = startdate.Value;
                 DateTime endate = enddate.Value;
-                MySqlCommand command = new MySqlCommand("select (sum(time_to_sec(`DailyWork_Hr`) ) ) as Total from employee_att_daily WHERE `Status`!=3 and Empid =@empid and Date BETWEEN @from and @to ", conn.getConnetion());
-                command.Parameters.Add("@from", MySqlDbType.Date).Value = stdate;
-                command.Parameters.Add("@to", MySqlDbType.Date).Value = endate;
-                command.Parameters.Add("@empid", MySqlDbType.Int32).Value = id;
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                DataTable table = new DataTable();
-
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
+                DataTable table = emptot.GetTotalWorkingHours(id,stdate,endate);
                 if (table.Rows.Count > 0)
                 {
 
@@ -212,11 +191,13 @@ namespace Payrollsys_V2.Forms
             {
                 MessageBox.Show("Required Fill the Fields!", "Empty Data!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            */
 
         }
 
         private void txttotot_Enter(object sender, EventArgs e)
         {
+            /*
             try
             {
                 //for total OT time
@@ -224,14 +205,7 @@ namespace Payrollsys_V2.Forms
                 DateTime stdate = startdate.Value;
                 DateTime endate = enddate.Value;
 
-                MySqlCommand command = new MySqlCommand("SELECT (SUM(TIME_TO_SEC(`OT_HR`))) AS Total from employee_att_daily WHERE `Status`!=3 and Empid ='" + id + "' and Date BETWEEN @from and @to ", conn.getConnetion());
-                command.Parameters.Add("@from", MySqlDbType.Date).Value = stdate;
-                command.Parameters.Add("@to", MySqlDbType.Date).Value = endate;
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                DataTable table = new DataTable();
-
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
+                DataTable table = emptot.GetTotalOtTime(id,stdate,endate);
                 if (table.Rows.Count > 0)
                 {
                     string s = table.Rows[0]["Total"].ToString();
@@ -249,11 +223,13 @@ namespace Payrollsys_V2.Forms
             {
                 MessageBox.Show("Required Fill the Fields!", "Empty Data!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            */
 
         }
 
         private void txtactualhours_Enter(object sender, EventArgs e)
         {
+            /*
             try
             {
                 string wh = txttothours.Text;
@@ -310,6 +286,7 @@ namespace Payrollsys_V2.Forms
                             txtactualhours.Text = actualhours.ToString();
                             Console.WriteLine(actualhours);
                         }*/
+            /*
                        
 
                     }
@@ -320,6 +297,7 @@ namespace Payrollsys_V2.Forms
             {
                 MessageBox.Show("Required Fill the Fields!", "Empty Data!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            */
         }
 
         private void btnsave_Click(object sender, EventArgs e)
@@ -337,7 +315,7 @@ namespace Payrollsys_V2.Forms
             int actualdays;
             DateTime stdate = startdate.Value;
             DateTime endate = enddate.Value;
-
+            string EID = EmployeeID.Text;
             try
             {
                 id = Convert.ToInt32(txtemployid.Text);
@@ -359,11 +337,11 @@ namespace Payrollsys_V2.Forms
                 }
                 else
                 {
-                    Boolean insertClient = emptot.insertempatttot(id, nm, tothr, totday, totot, stdate, endate, leave, totlate, totactual, actualdays, state);
+                    Boolean insertClient = emptot.insertempatttot(id, nm, tothr, totday, totot, stdate, endate, leave, totlate, totactual, actualdays, state,EID);
 
                     if (insertClient)
                     {
-                        dataGridViewempatttotal.DataSource = emptot.filterempatt(id);
+                        dataGridViewempatttotal.DataSource = emptot.getEmployeeAttemdamceTotal();
                         MessageBox.Show("New Employee Inserted Sucessfuly!", "Add Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnclear.PerformClick();
 
@@ -503,8 +481,156 @@ namespace Payrollsys_V2.Forms
             txtlate.Text = dataGridViewempatttotal.CurrentRow.Cells[9].Value.ToString();
             txtactualhours.Text = dataGridViewempatttotal.CurrentRow.Cells[10].Value.ToString();
             txtactualdays.Text = dataGridViewempatttotal.CurrentRow.Cells[11].Value.ToString();
+            EmployeeID.Text = dataGridViewempatttotal.CurrentRow.Cells[12].Value.ToString();
+            TotalID.Text = dataGridViewempatttotal.CurrentRow.Cells[0].Value.ToString();
         }
 
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = false;
+        }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            dataGridView1.Visible = false;
+        }
+
+        private void CalculateAll_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(txtemployid.Text);
+                DateTime leavetime = DateTime.Parse("00:00:00");
+                DateTime stdate = startdate.Value;
+                DateTime endate = enddate.Value;
+
+                int totaldays = 0;int totalleaves = 0;
+
+                //Get Total Days
+                DataTable table = emptot.GetTotalDays(id, stdate, endate);
+                if (table.Rows.Count > 0)
+                {
+                    txttotdays.Text = table.Rows[0]["Total"].ToString();
+                    totaldays = Convert.ToInt32(table.Rows[0]["Total"].ToString());
+                }
+                //Get total leaves
+                DataTable t2 = emptot.GetTotalLeaveDays(id, leavetime, stdate, endate);
+                if (t2.Rows.Count > 0)
+                {
+                    txtleave.Text = t2.Rows[0]["Total"].ToString();
+                    totalleaves   = Convert.ToInt32(t2.Rows[0]["Total"].ToString());
+                }
+                if (totaldays > totalleaves)
+                {
+                    int actualday = totaldays - totalleaves;
+                    txtactualdays.Text = actualday.ToString();
+                }
+                else if (totaldays < totalleaves)
+                {
+                    MessageBox.Show("Totalday should be greater than Leave day ", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                //Total Late Hours
+                DataTable t3 = emptot.GetTotalLateHours(id, stdate, endate);
+                string totallate = "";
+                if (t3.Rows.Count > 0)
+                {
+                    string s = t3.Rows[0]["Total"].ToString();
+                    double tottime = Convert.ToDouble(s);
+                    int hours = (int)(tottime / 3600);
+                    int minute = (int)((tottime % 3600) / 60);
+
+
+                    totallate = string.Format("{0:D2}:{1:D2}", hours, minute);
+                    txtlate.Text = totallate.ToString();
+                }
+
+                //Total Working Hours
+                DataTable t4 = emptot.GetTotalWorkingHours(id, stdate, endate);
+                string totalhours = "";
+                if (t4.Rows.Count > 0)
+                {
+
+                    //DateTime totaltime = Convert.ToDateTime(table.Rows[0]["Total"].ToString());
+                    string s = t4.Rows[0]["Total"].ToString();
+                    double totaltime = Convert.ToDouble(s);
+                    int hours = (int)(totaltime / 3600);
+                    int minute = (int)((totaltime % 3600) / 60);
+
+                    //double test = totaltime % 3600;
+                    // double finalresult = finaltime + test;
+                    totalhours = string.Format("{0:D2}:{1:D2}", hours, minute);
+                    txttothours.Text = totalhours.ToString();
+                }
+
+                DataTable t5 = emptot.GetTotalOtTime(id, stdate, endate);
+                if (t5.Rows.Count > 0)
+                {
+                    string s = t5.Rows[0]["Total"].ToString();
+                    double totaltime = Convert.ToDouble(s);
+                    int hours = (int)(totaltime / 3600);
+                    int minute = (int)((totaltime % 3600) / 60);
+
+                    //double test = totaltime % 3600;
+                    // double finalresult = finaltime + test;
+                    string totothour = string.Format("{0:D2}:{1:D2}", hours, minute);
+                    txttotot.Text = totothour.ToString();
+                }
+
+                //actual hours
+                    
+                    string wh = totalhours;
+                    string lh = totallate;
+                    string[] whlist = wh.Split(':');
+                    string[] lhlist = lh.Split(':');
+                    foreach (string x in whlist)
+                    {
+                        int whours = Convert.ToInt32(whlist[0]);
+                        int wminute = Convert.ToInt32(whlist[1]);
+                        foreach (string y in lhlist)
+                        {
+                            int latehours = Convert.ToInt32(lhlist[0]);
+                            int lateminute = Convert.ToInt32(lhlist[1]);
+                            if (whours > latehours)
+                            {
+                                int totalhour = whours - latehours;
+                                Console.WriteLine(totalhours);
+                                int totalminute = wminute - lateminute;
+                                string totalhr = totalhours.ToString();
+                                string totalmin = totalminute.ToString();
+                                string actualhours = string.Format("{0:D2}:{1:D2}", totalhr, totalmin);
+                                txtactualhours.Text = actualhours.ToString();
+                                Console.WriteLine(actualhours);
+
+                            }
+                            else if (lateminute > wminute)
+                            {
+                                int totalhour = whours - latehours;
+                                int totalminute = lateminute - wminute;
+                                string totalhr = totalhours.ToString();
+                                string totalmin = totalminute.ToString();
+                                string actualhours = string.Format("{0:D2}:{1:D2}", totalhr, totalmin);
+                                txtactualhours.Text = actualhours.ToString();
+                                Console.WriteLine(actualhours);
+                            }
+                            else if (latehours > whours)
+                            {
+                                int totalhour = latehours - whours;
+                                int totalminute = wminute - lateminute;
+                                string totalhr = totalhours.ToString();
+                                string totalmin = totalminute.ToString();
+                                string actualhours = string.Format("{0:D2}:{1:D2}", totalhr, totalmin);
+                                txtactualhours.Text = actualhours.ToString();
+                                Console.WriteLine(actualhours);
+                            }
+                           
+                        }
+                    }
+            }
+            catch
+            {
+                MessageBox.Show("There is No Data In Selected Dates", "Empty Data!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

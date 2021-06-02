@@ -37,6 +37,7 @@ namespace Payrollsys_V2.ReportForm
 
 
 
+
             if (txtempid.Text == ""){
 
 
@@ -79,6 +80,7 @@ namespace Payrollsys_V2.ReportForm
                 this.reportViewer1.RefreshReport();
             }
             else
+
             {
 
 
