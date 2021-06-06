@@ -141,5 +141,15 @@ namespace Payrollsys_V2.ReportForm
             int id;
             id = Convert.ToInt32(txtempid.Text);
         }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = false;
+        }
+
+        private void panel1_Click_1(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = false;
+        }
     }
 }

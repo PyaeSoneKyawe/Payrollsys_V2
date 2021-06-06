@@ -124,10 +124,11 @@
             this.panel1.Controls.Add(this.txtemployid);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(616, 275);
             this.panel1.TabIndex = 89;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
             // txttotot
             // 
@@ -199,12 +200,12 @@
             // 
             // btnsearch
             // 
-            this.btnsearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnsearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnsearch.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnsearch.IconColor = System.Drawing.Color.Black;
             this.btnsearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnsearch.Location = new System.Drawing.Point(219, 10);
-            this.btnsearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnsearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(27, 20);
             this.btnsearch.TabIndex = 2;
@@ -539,7 +540,7 @@
             this.panel3.Controls.Add(this.btndelete);
             this.panel3.Controls.Add(this.btnclear);
             this.panel3.Location = new System.Drawing.Point(1, 279);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(616, 46);
             this.panel3.TabIndex = 90;
@@ -620,7 +621,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormSalaryProcess";
             this.Text = "FormSalaryProcess";
             this.Load += new System.EventHandler(this.FormSalaryProcess_Load);

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.ImportData = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -50,11 +51,9 @@
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnMaximize = new FontAwesome.Sharp.IconButton();
             this.btnExit = new FontAwesome.Sharp.IconButton();
-            this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelreports.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -85,6 +84,25 @@
             this.panelMenu.Size = new System.Drawing.Size(303, 721);
             this.panelMenu.TabIndex = 0;
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.Red;
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnLogOut.IconColor = System.Drawing.Color.Black;
+            this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogOut.Location = new System.Drawing.Point(0, 696);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(286, 49);
+            this.btnLogOut.TabIndex = 12;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // ImportData
             // 
             this.ImportData.Dock = System.Windows.Forms.DockStyle.Top;
@@ -95,7 +113,7 @@
             this.ImportData.IconColor = System.Drawing.Color.Black;
             this.ImportData.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ImportData.Location = new System.Drawing.Point(0, 647);
-            this.ImportData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ImportData.Margin = new System.Windows.Forms.Padding(2);
             this.ImportData.Name = "ImportData";
             this.ImportData.Size = new System.Drawing.Size(286, 49);
             this.ImportData.TabIndex = 11;
@@ -113,7 +131,7 @@
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.Location = new System.Drawing.Point(0, 598);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(286, 49);
             this.iconButton2.TabIndex = 10;
@@ -131,7 +149,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.Location = new System.Drawing.Point(0, 549);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(286, 49);
             this.iconButton1.TabIndex = 9;
@@ -148,7 +166,7 @@
             this.panelreports.Controls.Add(this.btnempreport);
             this.panelreports.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelreports.Location = new System.Drawing.Point(0, 399);
-            this.panelreports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelreports.Margin = new System.Windows.Forms.Padding(2);
             this.panelreports.Name = "panelreports";
             this.panelreports.Size = new System.Drawing.Size(286, 150);
             this.panelreports.TabIndex = 8;
@@ -162,7 +180,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(0, 117);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(286, 31);
             this.button1.TabIndex = 4;
@@ -179,7 +197,7 @@
             this.btnemppayslip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnemppayslip.ForeColor = System.Drawing.Color.White;
             this.btnemppayslip.Location = new System.Drawing.Point(0, 87);
-            this.btnemppayslip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnemppayslip.Margin = new System.Windows.Forms.Padding(2);
             this.btnemppayslip.Name = "btnemppayslip";
             this.btnemppayslip.Size = new System.Drawing.Size(286, 30);
             this.btnemppayslip.TabIndex = 3;
@@ -196,7 +214,7 @@
             this.btnempmonthlyreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnempmonthlyreport.ForeColor = System.Drawing.Color.White;
             this.btnempmonthlyreport.Location = new System.Drawing.Point(0, 58);
-            this.btnempmonthlyreport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnempmonthlyreport.Margin = new System.Windows.Forms.Padding(2);
             this.btnempmonthlyreport.Name = "btnempmonthlyreport";
             this.btnempmonthlyreport.Size = new System.Drawing.Size(286, 29);
             this.btnempmonthlyreport.TabIndex = 2;
@@ -213,7 +231,7 @@
             this.btnempdailyreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnempdailyreport.ForeColor = System.Drawing.Color.White;
             this.btnempdailyreport.Location = new System.Drawing.Point(0, 29);
-            this.btnempdailyreport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnempdailyreport.Margin = new System.Windows.Forms.Padding(2);
             this.btnempdailyreport.Name = "btnempdailyreport";
             this.btnempdailyreport.Size = new System.Drawing.Size(286, 29);
             this.btnempdailyreport.TabIndex = 1;
@@ -230,7 +248,7 @@
             this.btnempreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnempreport.ForeColor = System.Drawing.Color.White;
             this.btnempreport.Location = new System.Drawing.Point(0, 0);
-            this.btnempreport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnempreport.Margin = new System.Windows.Forms.Padding(2);
             this.btnempreport.Name = "btnempreport";
             this.btnempreport.Size = new System.Drawing.Size(286, 29);
             this.btnempreport.TabIndex = 0;
@@ -386,7 +404,6 @@
             this.panelTitleBar.Controls.Add(this.btnMinimize);
             this.panelTitleBar.Controls.Add(this.btnMaximize);
             this.panelTitleBar.Controls.Add(this.btnExit);
-            this.panelTitleBar.Controls.Add(this.lblTitleChildForm);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(303, 0);
@@ -442,17 +459,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // lblTitleChildForm
-            // 
-            this.lblTitleChildForm.AutoSize = true;
-            this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleChildForm.Location = new System.Drawing.Point(33, 30);
-            this.lblTitleChildForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(35, 13);
-            this.lblTitleChildForm.TabIndex = 2;
-            this.lblTitleChildForm.Text = "Home";
-            // 
             // iconCurrentChildForm
             // 
             this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
@@ -487,25 +493,6 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(829, 649);
             this.panelDesktop.TabIndex = 3;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackColor = System.Drawing.Color.Red;
-            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnLogOut.IconColor = System.Drawing.Color.Black;
-            this.btnLogOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 696);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(286, 49);
-            this.btnLogOut.TabIndex = 12;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // Form1
             // 
@@ -542,7 +529,6 @@
         private FontAwesome.Sharp.IconButton btndaily;
         private System.Windows.Forms.Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
-        private System.Windows.Forms.Label lblTitleChildForm;
         private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Panel panelLogo;

@@ -29,11 +29,11 @@ namespace Payrollsys_V2.ReportForm
                 string Name = row["Name"].ToString();
                 string phone = row["Phone"].ToString();
                 string Address = row["Address"].ToString();
-                string Empid = row["Empid"].ToString();
+                string Empid = row["ID"].ToString();
                 int id = Int32.Parse(Empid);
-                string basicpay = row["Basic_Pay"].ToString();
+                string basicpay = row["Salary"].ToString();
                 int bpay = Int32.Parse(basicpay);
-                string ot_pay = row["OT_Pay"].ToString();
+                string ot_pay = row["OT"].ToString();
                 int ot = Int32.Parse(ot_pay);
                 
                 m_employees.Add(new Emplis(id, Name, phone, Address, bpay, ot));

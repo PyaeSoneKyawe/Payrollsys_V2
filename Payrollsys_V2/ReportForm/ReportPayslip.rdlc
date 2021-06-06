@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Dimond Sisters Printing Monywa</Value>
+                <Value />
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -128,7 +128,7 @@
         <Top>4.61958cm</Top>
         <Left>1.52259cm</Left>
         <Height>0.56472cm</Height>
-        <Width>2.58819cm</Width>
+        <Width>7.7652cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -168,7 +168,7 @@
         <Top>5.48416cm</Top>
         <Left>1.52258cm</Left>
         <Height>0.56472cm</Height>
-        <Width>4.47555cm</Width>
+        <Width>7.76511cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -187,7 +187,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Daily Pay (နေ့ခ) : </Value>
+                <Value>Salary : </Value>
                 <Style>
                   <FontFamily>Myanmar Text</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -208,7 +208,7 @@
         <Top>6.41929cm</Top>
         <Left>1.52259cm</Left>
         <Height>0.56472cm</Height>
-        <Width>4.47555cm</Width>
+        <Width>7.7651cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -246,8 +246,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>7.59173cm</Top>
-        <Left>10.3822cm</Left>
+        <Top>3.70952cm</Top>
+        <Left>10.64676cm</Left>
         <Height>0.56472cm</Height>
         <Width>5.55153cm</Width>
         <ZIndex>5</ZIndex>
@@ -287,8 +287,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>8.26228cm</Top>
-        <Left>10.3822cm</Left>
+        <Top>4.38007cm</Top>
+        <Left>10.64676cm</Left>
         <Height>0.56472cm</Height>
         <Width>5.55152cm</Width>
         <ZIndex>6</ZIndex>
@@ -309,7 +309,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OT Pay (အချိန်ပိုကြေး) : </Value>
+                <Value>OT Pay : </Value>
                 <Style>
                   <FontFamily>Myanmar Text</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -330,7 +330,7 @@
         <Top>7.29241cm</Top>
         <Left>1.52258cm</Left>
         <Height>0.56472cm</Height>
-        <Width>5.55152cm</Width>
+        <Width>7.76511cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -673,7 +673,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Other Pay(မုန့်ဖိုး) : </Value>
+                <Value>Other Pay: </Value>
                 <Style>
                   <FontFamily>Myanmar Text</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -720,25 +720,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Bonus Pay(လုပ်ငန်းစွမ်းဆောင်ဆု</Value>
-                <Style>
-                  <FontFamily>Myanmar Text</FontFamily>
-                  <FontSize>8pt</FontSize>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>ငွေ</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Myanmar Text</FontFamily>
-                  <FontSize>8pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                  <Color>#000000</Color>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>) : </Value>
+                <Value>Bonus Pay: </Value>
                 <Style>
                   <FontFamily>Myanmar Text</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -785,7 +767,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Total Earning(စုစုပေါင်းရရှိလစာ) :</Value>
+                <Value>Total Earning :</Value>
                 <Style>
                   <FontFamily>Myanmar Text</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -830,7 +812,7 @@
       </Textbox>
       <Line Name="Line2">
         <Top>14.7253cm</Top>
-        <Left>5.19867cm</Left>
+        <Left>2.97617cm</Left>
         <Height>0cm</Height>
         <Width>4.08912cm</Width>
         <ZIndex>20</ZIndex>
@@ -842,7 +824,7 @@
       </Line>
       <Line Name="Line3">
         <Top>15.6428cm</Top>
-        <Left>5.19867cm</Left>
+        <Left>2.97617cm</Left>
         <Height>0cm</Height>
         <Width>4.08902cm</Width>
         <ZIndex>21</ZIndex>
@@ -859,7 +841,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Advance Pay(ကြိုထုတ်) : </Value>
+                <Value>Advance Pay : </Value>
                 <Style>
                   <FontFamily>Myanmar Text</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -906,25 +888,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Deduction Pay(</Value>
-                <Style>
-                  <FontFamily>Myanmar Text</FontFamily>
-                  <FontSize>8pt</FontSize>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>ဆုကြေး</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Myanmar Text</FontFamily>
-                  <FontSize>8pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextDecoration>None</TextDecoration>
-                  <Color>#000000</Color>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>ငွေ) : </Value>
+                <Value>Deduction Pay : </Value>
                 <Style>
                   <FontFamily>Myanmar Text</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -971,7 +935,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Late Fee(နောက်ကျကြေး) : </Value>
+                <Value>Late Fee: </Value>
                 <Style>
                   <FontFamily>Myanmar Text</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1018,7 +982,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Net Pay(အသားတင်ရရှိလစာ) :</Value>
+                <Value>Net Pay:</Value>
                 <Style>
                   <FontFamily>Myanmar Text</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1063,7 +1027,7 @@
       </Textbox>
       <Line Name="Line4">
         <Top>18.73814cm</Top>
-        <Left>5.19867cm</Left>
+        <Left>2.97617cm</Left>
         <Height>0cm</Height>
         <Width>4.08912cm</Width>
         <ZIndex>26</ZIndex>
@@ -1075,7 +1039,7 @@
       </Line>
       <Line Name="Line5">
         <Top>19.81463cm</Top>
-        <Left>5.19867cm</Left>
+        <Left>2.97617cm</Left>
         <Height>0cm</Height>
         <Width>4.08902cm</Width>
         <ZIndex>27</ZIndex>

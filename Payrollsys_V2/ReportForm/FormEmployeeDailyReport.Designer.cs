@@ -30,8 +30,7 @@ namespace Payrollsys_V2.ReportForm
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.empattreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,24 +43,21 @@ namespace Payrollsys_V2.ReportForm
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnsearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.empattreportBindingSource)).BeginInit();
+            this.empattreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.empattreportBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // empattreportBindingSource
-            // 
-            this.empattreportBindingSource.DataSource = typeof(Payrollsys_V2.empattreport);
             // 
             // reportViewer1
             // 
             this.reportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.reportViewer1.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.empattreportBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.empattreportBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Payrollsys_V2.ReportForm.ReportEmpdaily.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(1);
@@ -164,6 +160,7 @@ namespace Payrollsys_V2.ReportForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(566, 118);
             this.panel1.TabIndex = 16;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click_1);
             // 
             // dataGridView1
             // 
@@ -173,7 +170,7 @@ namespace Payrollsys_V2.ReportForm
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(233, 106);
+            this.dataGridView1.Size = new System.Drawing.Size(368, 106);
             this.dataGridView1.TabIndex = 46;
             this.dataGridView1.Visible = false;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -201,6 +198,10 @@ namespace Payrollsys_V2.ReportForm
             this.panel2.Size = new System.Drawing.Size(566, 170);
             this.panel2.TabIndex = 17;
             // 
+            // empattreportBindingSource
+            // 
+            this.empattreportBindingSource.DataSource = typeof(Payrollsys_V2.empattreport);
+            // 
             // FormEmployeeDailyReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,11 +214,11 @@ namespace Payrollsys_V2.ReportForm
             this.Name = "FormEmployeeDailyReport";
             this.Text = "FormEmployeeDailyReport";
             this.Load += new System.EventHandler(this.FormEmployeeDailyReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.empattreportBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.empattreportBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

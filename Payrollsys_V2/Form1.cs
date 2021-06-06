@@ -96,7 +96,7 @@ namespace Payrollsys_V2
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitleChildForm.Text = childForm.Text;
+           // lblTitleChildForm.Text = childForm.Text;
             
 
         }
@@ -169,7 +169,7 @@ namespace Payrollsys_V2
             leftBorderBtn.Visible = false;
             iconCurrentChildForm.IconChar = IconChar.Home;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
-            lblTitleChildForm.Text = "Home";
+            //lblTitleChildForm.Text = "Home";
         }
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
