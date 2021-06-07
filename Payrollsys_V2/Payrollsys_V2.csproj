@@ -633,6 +633,7 @@
   <ItemGroup>
     <Content Include="image\dmlogo.ico" />
     <None Include="image\dmlogo2.jpeg" />
+    <Content Include="image\icons8_shutdown_20px.png" />
     <Content Include="image\logo %281%29.ico" />
     <Content Include="image\logo.ico" />
     <Content Include="SqlServerTypes\readme.htm" />

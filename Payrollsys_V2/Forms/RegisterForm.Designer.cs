@@ -175,11 +175,11 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.Red;
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(266, 0);
+            this.btnClose.Image = global::Payrollsys_V2.Properties.Resources.icons8_shutdown_20px;
+            this.btnClose.Location = new System.Drawing.Point(263, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(23, 26);
+            this.btnClose.Size = new System.Drawing.Size(27, 27);
             this.btnClose.TabIndex = 21;
-            this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 

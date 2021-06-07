@@ -270,6 +270,9 @@ namespace Payrollsys_V2.Forms
             }
         }
 
-
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            dataGridViewemp.Hide();
+        }
     }
 }

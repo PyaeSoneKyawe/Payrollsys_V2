@@ -38,9 +38,10 @@ namespace Payrollsys_V2.Forms
             // 
             // openfilebtn
             // 
-            this.openfilebtn.Location = new System.Drawing.Point(333, 70);
+            this.openfilebtn.Location = new System.Drawing.Point(444, 86);
+            this.openfilebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.openfilebtn.Name = "openfilebtn";
-            this.openfilebtn.Size = new System.Drawing.Size(75, 23);
+            this.openfilebtn.Size = new System.Drawing.Size(100, 28);
             this.openfilebtn.TabIndex = 0;
             this.openfilebtn.Text = "Open File";
             this.openfilebtn.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@ namespace Payrollsys_V2.Forms
             // 
             // filename
             // 
-            this.filename.Location = new System.Drawing.Point(39, 70);
+            this.filename.Location = new System.Drawing.Point(52, 86);
+            this.filename.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.filename.Name = "filename";
-            this.filename.Size = new System.Drawing.Size(288, 20);
+            this.filename.Size = new System.Drawing.Size(383, 22);
             this.filename.TabIndex = 1;
             // 
             // openFileDialog1
@@ -59,11 +61,12 @@ namespace Payrollsys_V2.Forms
             // 
             // importbtn
             // 
-            this.importbtn.BackColor = System.Drawing.SystemColors.Desktop;
+            this.importbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.importbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.importbtn.Location = new System.Drawing.Point(130, 130);
+            this.importbtn.Location = new System.Drawing.Point(173, 160);
+            this.importbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.importbtn.Name = "importbtn";
-            this.importbtn.Size = new System.Drawing.Size(123, 45);
+            this.importbtn.Size = new System.Drawing.Size(164, 55);
             this.importbtn.TabIndex = 2;
             this.importbtn.Text = "Import";
             this.importbtn.UseVisualStyleBackColor = false;
@@ -71,11 +74,12 @@ namespace Payrollsys_V2.Forms
             // 
             // csvfilebtn
             // 
-            this.csvfilebtn.BackColor = System.Drawing.SystemColors.Desktop;
+            this.csvfilebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.csvfilebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.csvfilebtn.Location = new System.Drawing.Point(448, 61);
+            this.csvfilebtn.Location = new System.Drawing.Point(597, 75);
+            this.csvfilebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.csvfilebtn.Name = "csvfilebtn";
-            this.csvfilebtn.Size = new System.Drawing.Size(168, 43);
+            this.csvfilebtn.Size = new System.Drawing.Size(224, 53);
             this.csvfilebtn.TabIndex = 3;
             this.csvfilebtn.Text = "CSV file download";
             this.csvfilebtn.UseVisualStyleBackColor = false;
@@ -83,13 +87,14 @@ namespace Payrollsys_V2.Forms
             // 
             // ImportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.csvfilebtn);
             this.Controls.Add(this.importbtn);
             this.Controls.Add(this.filename);
             this.Controls.Add(this.openfilebtn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ImportForm";
             this.Text = "ImportForm";
             this.ResumeLayout(false);
