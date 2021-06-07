@@ -34,7 +34,8 @@ namespace Payrollsys_V2.Forms
             txtemployid.Text = dataGridViewemp.CurrentRow.Cells[0].Value.ToString();
             txtname.Text = dataGridViewemp.CurrentRow.Cells[1].Value.ToString();
             txtbasic.Text = dataGridViewemp.CurrentRow.Cells[2].Value.ToString();
-            txtot.Text = dataGridViewemp.CurrentRow.Cells[3].Value.ToString();
+            //txtot.Text = dataGridViewemp.CurrentRow.Cells[3].Value.ToString();
+            txtot.Text  ="0";
             txttotwh.Text = dataGridViewemp.CurrentRow.Cells[11].Value.ToString();
             txtday.Text = dataGridViewemp.CurrentRow.Cells[12].Value.ToString();
             txttotot.Text = dataGridViewemp.CurrentRow.Cells[6].Value.ToString();
@@ -273,6 +274,78 @@ namespace Payrollsys_V2.Forms
         private void panel1_Click(object sender, EventArgs e)
         {
             dataGridViewemp.Hide();
+        }
+
+        private void txtot_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
+        }
+
+        private void txtadv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
+        }
+
+        private void txtother_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
+        }
+
+        private void txtbounus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
+        }
+
+        private void txtdeduction_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
+        }
+
+        private void txtlate_1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
+        }
+
+        private void txttotalearning_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
+        }
+
+        private void txtnetpay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            base.OnKeyPress(e);
         }
     }
 }

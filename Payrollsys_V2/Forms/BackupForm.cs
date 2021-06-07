@@ -26,6 +26,9 @@ namespace Payrollsys_V2.Forms
             try
             {
                 MySqlCommand command = new MySqlCommand();
+                string Location = @"C:\\";
+                string path = System.IO.Path.Combine(Location,"backups");
+                System.IO.Directory.CreateDirectory(path);
                 string filename = txtfilename.Text;
                 string file = "C:\\backups\\" + filename + ".sql";
                 string constring = "datasource = localhost; port = 3306; username = root; password =root; database = empsys";
@@ -39,7 +42,7 @@ namespace Payrollsys_V2.Forms
                             conn.Open();
                             mb.ExportToFile(file);
                             conn.Close();
-                            MessageBox.Show("Backup Completed....!");
+                            MessageBox.Show("Backup Completed....! \n Backup File located at C:\\backup");
 
                         }
                     }

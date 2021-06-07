@@ -153,7 +153,7 @@
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(286, 49);
             this.iconButton1.TabIndex = 9;
-            this.iconButton1.Text = "System";
+            this.iconButton1.Text = "System BackUp";
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
@@ -184,7 +184,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(286, 31);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Monthly Repayment";
+            this.button1.Text = "Monthly Cost";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

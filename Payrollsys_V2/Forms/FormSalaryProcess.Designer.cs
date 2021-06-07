@@ -88,9 +88,9 @@
             this.panel1.Controls.Add(this.txttotot);
             this.panel1.Controls.Add(this.txttotalearning);
             this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.dataGridViewemp);
             this.panel1.Controls.Add(this.txtlate_1);
             this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.dataGridViewemp);
             this.panel1.Controls.Add(this.btnsearch);
             this.panel1.Controls.Add(this.txtdeduction);
             this.panel1.Controls.Add(this.label16);
@@ -149,6 +149,7 @@
             this.txttotalearning.Size = new System.Drawing.Size(107, 26);
             this.txttotalearning.TabIndex = 18;
             this.txttotalearning.Enter += new System.EventHandler(this.txttotalearning_Enter);
+            this.txttotalearning.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttotalearning_KeyPress);
             // 
             // label18
             // 
@@ -170,6 +171,7 @@
             this.txtlate_1.Size = new System.Drawing.Size(107, 26);
             this.txtlate_1.TabIndex = 17;
             this.txtlate_1.Text = "0";
+            this.txtlate_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtlate_1_KeyPress);
             // 
             // label17
             // 
@@ -187,7 +189,7 @@
             this.dataGridViewemp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewemp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewemp.Location = new System.Drawing.Point(251, 3);
+            this.dataGridViewemp.Location = new System.Drawing.Point(250, 10);
             this.dataGridViewemp.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridViewemp.Name = "dataGridViewemp";
             this.dataGridViewemp.ReadOnly = true;
@@ -222,6 +224,7 @@
             this.txtdeduction.Size = new System.Drawing.Size(107, 26);
             this.txtdeduction.TabIndex = 16;
             this.txtdeduction.Text = "0";
+            this.txtdeduction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdeduction_KeyPress);
             // 
             // label16
             // 
@@ -243,6 +246,7 @@
             this.txtbounus.Size = new System.Drawing.Size(107, 26);
             this.txtbounus.TabIndex = 15;
             this.txtbounus.Text = "0";
+            this.txtbounus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbounus_KeyPress);
             // 
             // label15
             // 
@@ -345,6 +349,7 @@
             this.txtother.Size = new System.Drawing.Size(107, 26);
             this.txtother.TabIndex = 14;
             this.txtother.Text = "0";
+            this.txtother.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtother_KeyPress);
             // 
             // label10
             // 
@@ -366,6 +371,7 @@
             this.txtadv.Size = new System.Drawing.Size(107, 26);
             this.txtadv.TabIndex = 13;
             this.txtadv.Text = "0";
+            this.txtadv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtadv_KeyPress);
             // 
             // label9
             // 
@@ -386,6 +392,7 @@
             this.txtnetpay.Name = "txtnetpay";
             this.txtnetpay.Size = new System.Drawing.Size(107, 26);
             this.txtnetpay.TabIndex = 19;
+            this.txtnetpay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnetpay_KeyPress);
             // 
             // label8
             // 
@@ -459,6 +466,7 @@
             this.txtot.Name = "txtot";
             this.txtot.Size = new System.Drawing.Size(107, 26);
             this.txtot.TabIndex = 12;
+            this.txtot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtot_KeyPress);
             // 
             // label4
             // 

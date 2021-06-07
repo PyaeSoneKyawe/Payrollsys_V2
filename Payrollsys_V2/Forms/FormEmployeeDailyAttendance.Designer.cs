@@ -74,6 +74,7 @@
             this.txtempid.ReadOnly = true;
             this.txtempid.Size = new System.Drawing.Size(134, 26);
             this.txtempid.TabIndex = 1;
+            this.txtempid.Visible = false;
             // 
             // label1
             // 
@@ -117,7 +118,7 @@
             this.panel3.Controls.Add(this.btndelete);
             this.panel3.Controls.Add(this.btnclear);
             this.panel3.Location = new System.Drawing.Point(17, 221);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(827, 46);
             this.panel3.TabIndex = 22;
@@ -239,6 +240,7 @@
             this.txtworkinghour.Location = new System.Drawing.Point(602, 106);
             this.txtworkinghour.Margin = new System.Windows.Forms.Padding(1);
             this.txtworkinghour.Name = "txtworkinghour";
+            this.txtworkinghour.ReadOnly = true;
             this.txtworkinghour.Size = new System.Drawing.Size(130, 26);
             this.txtworkinghour.TabIndex = 7;
             this.txtworkinghour.Enter += new System.EventHandler(this.txtworkinghour_Enter);
@@ -323,7 +325,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(17, 8);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(827, 209);
             this.panel2.TabIndex = 46;
@@ -335,7 +337,7 @@
             this.txtout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtout.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtout.Location = new System.Drawing.Point(326, 105);
-            this.txtout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtout.Margin = new System.Windows.Forms.Padding(2);
             this.txtout.Name = "txtout";
             this.txtout.ShowUpDown = true;
             this.txtout.Size = new System.Drawing.Size(134, 23);
@@ -347,7 +349,7 @@
             this.txtin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtin.Location = new System.Drawing.Point(131, 101);
-            this.txtin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtin.Margin = new System.Windows.Forms.Padding(2);
             this.txtin.Name = "txtin";
             this.txtin.ShowUpDown = true;
             this.txtin.Size = new System.Drawing.Size(134, 23);
@@ -358,7 +360,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(442, 8);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -379,7 +381,7 @@
             this.btnsearch.IconColor = System.Drawing.Color.Black;
             this.btnsearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnsearch.Location = new System.Drawing.Point(311, 10);
-            this.btnsearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnsearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(99, 45);
             this.btnsearch.TabIndex = 2;
@@ -406,6 +408,7 @@
             this.attendanceID.ReadOnly = true;
             this.attendanceID.Size = new System.Drawing.Size(134, 26);
             this.attendanceID.TabIndex = 1;
+            this.attendanceID.Visible = false;
             // 
             // txtlate
             // 
@@ -447,7 +450,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormEmployeeDailyAttendance";
             this.Text = "FormEmployeeDailyAttendance";
             this.Load += new System.EventHandler(this.FormEmployeeDailyAttendance_Load);

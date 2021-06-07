@@ -137,6 +137,8 @@ namespace Payrollsys_V2.ReportForm
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtempid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            EMpName.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+
             dataGridView1.Visible = false;
             int id;
             id = Convert.ToInt32(txtempid.Text);

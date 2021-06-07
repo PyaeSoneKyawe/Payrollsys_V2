@@ -91,11 +91,17 @@ namespace Payrollsys_V2.Forms
         private void csvfilebtn_Click(object sender, EventArgs e)
         {
             object Nothing = System.Reflection.Missing.Value;
+
             var app = new Microsoft.Office.Interop.Excel.Application();
             app.Visible = false;
             Microsoft.Office.Interop.Excel.Workbook workBook = app.Workbooks.Add(Nothing);
             Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Sheets[1];
             worksheet.Name = "WorkSheet";
+
+            string Location = @"C:\\";
+            string path = System.IO.Path.Combine(Location, "CVS Template");
+            System.IO.Directory.CreateDirectory(path);
+
             // Write data
             worksheet.Cells[1, 1] = "ID";
             worksheet.Cells[1, 2] = "Empid";
@@ -111,13 +117,13 @@ namespace Payrollsys_V2.Forms
             // Save file as xlsx
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            worksheet.SaveAs(@"F:\File\aa.xlsx", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);
+            worksheet.SaveAs(@"C:\CVS Template\aa.xlsx", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing);
             workBook.Close(false, Type.Missing, Type.Missing);
 
 
             //import file as csv
-            string inputFile = @"F:\File\aa.xlsx";
-            string outputFile = @"F:\File\DailyList_CSV.csv";
+            string inputFile = @"C:\CVS Template\aa.xlsx";
+            string outputFile = @"C:\CVS Template\DailyList_CSV.csv";
             Microsoft.Office.Interop.Excel.Application app2 = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook wb = app2.Workbooks.Open(inputFile);
             Microsoft.Office.Interop.Excel.Worksheet xlSheet = (Microsoft.Office.Interop.Excel.Worksheet)wb.Worksheets[1];
@@ -126,7 +132,7 @@ namespace Payrollsys_V2.Forms
             wb.Close(false);
             app.Quit();
 
-            MessageBox.Show("Downloaded template at F:\\File\\DailyList.csv", "Template", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Downloaded template at C:\\CVS Template\\DailyList.csv", "Template", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
     }

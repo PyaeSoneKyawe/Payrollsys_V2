@@ -34,7 +34,6 @@ namespace Payrollsys_V2.ReportForm
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.entdate = new System.Windows.Forms.DateTimePicker();
             this.startdate = new System.Windows.Forms.DateTimePicker();
             this.searchbtn = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@ namespace Payrollsys_V2.ReportForm
             this.btnsearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.empattreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EMpName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -87,16 +87,6 @@ namespace Payrollsys_V2.ReportForm
             this.label2.TabIndex = 14;
             this.label2.Text = "From:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Emp ID:";
-            // 
             // entdate
             // 
             this.entdate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,24 +126,25 @@ namespace Payrollsys_V2.ReportForm
             // 
             // txtempid
             // 
-            this.txtempid.Location = new System.Drawing.Point(60, 14);
+            this.txtempid.Location = new System.Drawing.Point(16, 72);
             this.txtempid.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtempid.Name = "txtempid";
-            this.txtempid.Size = new System.Drawing.Size(57, 20);
+            this.txtempid.Size = new System.Drawing.Size(94, 20);
             this.txtempid.TabIndex = 9;
+            this.txtempid.Visible = false;
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.EMpName);
             this.panel1.Controls.Add(this.btnsearch);
             this.panel1.Controls.Add(this.startdate);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtempid);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.searchbtn);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.entdate);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Margin = new System.Windows.Forms.Padding(1);
@@ -165,7 +156,7 @@ namespace Payrollsys_V2.ReportForm
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(157, 10);
+            this.dataGridView1.Location = new System.Drawing.Point(161, 11);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
@@ -202,6 +193,14 @@ namespace Payrollsys_V2.ReportForm
             // 
             this.empattreportBindingSource.DataSource = typeof(Payrollsys_V2.empattreport);
             // 
+            // EMpName
+            // 
+            this.EMpName.Location = new System.Drawing.Point(16, 16);
+            this.EMpName.Name = "EMpName";
+            this.EMpName.ReadOnly = true;
+            this.EMpName.Size = new System.Drawing.Size(100, 20);
+            this.EMpName.TabIndex = 17;
+            // 
             // FormEmployeeDailyReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,7 +228,6 @@ namespace Payrollsys_V2.ReportForm
         private System.Windows.Forms.BindingSource empattreportBindingSource;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker entdate;
         private System.Windows.Forms.DateTimePicker startdate;
         private System.Windows.Forms.Button searchbtn;
@@ -238,5 +236,6 @@ namespace Payrollsys_V2.ReportForm
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnsearch;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox EMpName;
     }
 }
