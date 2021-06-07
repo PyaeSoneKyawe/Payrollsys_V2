@@ -200,7 +200,7 @@
             // 
             // btnsearch
             // 
-            this.btnsearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnsearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnsearch.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnsearch.IconColor = System.Drawing.Color.Black;
             this.btnsearch.IconFont = FontAwesome.Sharp.IconFont.Auto;

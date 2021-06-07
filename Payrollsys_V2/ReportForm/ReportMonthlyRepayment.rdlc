@@ -1349,15 +1349,15 @@
         </Paragraphs>
         <rd:DefaultName>Textbox69</rd:DefaultName>
         <Top>2.00766cm</Top>
-        <Left>29.25066cm</Left>
+        <Left>29.88566cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.26188cm</Width>
+        <Width>2.06786cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>Gray</BackgroundColor>
+          <BackgroundColor>Silver</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -1384,15 +1384,15 @@
         </Paragraphs>
         <rd:DefaultName>Textbox70</rd:DefaultName>
         <Top>2.00766cm</Top>
-        <Left>31.68892cm</Left>
+        <Left>32.12991cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.39417cm</Width>
+        <Width>2.21778cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>Gray</BackgroundColor>
+          <BackgroundColor>Silver</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -1417,7 +1417,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Dimond Sisters Printing Monywa</Value>
+                  <Value />
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>

@@ -303,5 +303,7 @@ namespace Payrollsys_V2.Forms
         {
             dataGridView1.Visible = false;
         }
+
+
     }
 }
