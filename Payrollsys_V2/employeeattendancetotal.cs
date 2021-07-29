@@ -238,6 +238,7 @@ namespace Payrollsys_V2
             DataTable table = new DataTable();
             adapter.SelectCommand = command;
             adapter.Fill(table);
+            Console.WriteLine(table);
             return table;
 
         }
